@@ -35,6 +35,7 @@ class HousingPricePredictor:
         plt.ylabel("Price ($)")
         plt.title("Housing Price Prediction")
         plt.legend()
+        plt.grid()
         plt.show()
 
     def predict_price(self): #--Predict house price
