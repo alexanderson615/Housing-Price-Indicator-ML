@@ -9,7 +9,11 @@ class HousingPricePredictor:
         self.model = None
 
     def load_data(self): #--Load CSV file
-        self.data = pd.read_csv('housing_data.csv')
+        try:
+            self.data = pd.read_csv('housing_data.csv')
+
+        except FileNotFoundError as e:
+            print(f"Error: {e}. CSV file was not found.")
 
     def explore_data(self): #--Print data to console
         print(self.data.describe())
